@@ -1,0 +1,170 @@
+/* Palette de couleurs */
+:root {
+    --dark-purple: #49225B;
+    --medium-purple: #6E3482;
+    --light-purple: #A56ABD;
+    --soft-purple: #E7DBEF;
+    --pale-purple: #F5EBFA;
+}
+
+/* Importation de la police */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;700&display=swap');
+
+/* Style global */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, var(--pale-purple), var(--dark-purple));
+    color: var(--dark-purple);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 95vh;
+}
+
+/* Conteneur principal */
+.container {
+    background: var(--soft-purple);
+    border-radius: 20px;
+    padding: 25px;
+    width: 400px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), -10px -10px 20px rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet lumineux */
+.container::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    top: -50px;
+    right: -50px;
+    border-radius: 50%;
+    filter: blur(40px);
+}
+
+/* Titre avec animation */
+h1 {
+    font-size: 24px;
+    color: var(--medium-purple);
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Nom stylisé */
+h1::after {
+    content: "Yelli Mariame ❤";
+    display: block;
+    font-size: 18px;
+    font-family: 'Pacifico', cursive;
+    color: var(--dark-purple);
+    margin-top: 5px;
+    animation: pulse 2s infinite alternate;
+}
+
+/* Effet pulsation */
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Champ d'entrée */
+input[type="text"] {
+    width: 75%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: var(--pale-purple);
+    color: var(--dark-purple);
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+}
+
+/* Effet focus */
+input[type="text"]:focus {
+    background: white;
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.1), inset -3px -3px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Bouton d'ajout */
+#addtask {
+    padding: 15px 25px; /* Augmenter la taille du bouton */
+    background: var(--medium-purple);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 10; /* Mettre le bouton au-dessus des autres éléments */
+}
+
+/* Liste des tâches */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style des tâches */
+ul li {
+    background: var(--light-purple);
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+ul li:hover {
+    transform: scale(1.05);
+}
+
+/* Bouton de suppression */
+ul li button {
+    background: var(--dark-purple);
+    padding: 5px 8px;
+    font-size: 12px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Effet hover sur bouton de suppression */
+ul li button:hover {
+    background: red;
+    transform: scale(1.2);
+}
