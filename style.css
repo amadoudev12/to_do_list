@@ -144,6 +144,8 @@ ul li {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.2);
     animation: fadeIn 0.5s ease-in-out;
     transition: transform 0.3s ease-in-out;
+    /* overflow-x: auto; */
+    /* overflow-y: auto; */
 }
 
 /* Effet au survol */
@@ -167,4 +169,16 @@ ul li button {
 ul li button:hover {
     background: red;
     transform: scale(1.2);
+}
+@media  screen and (max-width:500px) {
+    ul li{
+        padding: 10px 0;
+        text-align: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    /* ul li button{
+        position: absolute;
+        right: 25px;
+    } */
 }
