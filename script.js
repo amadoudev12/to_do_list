@@ -64,9 +64,9 @@ function timeDisplay(){
     if (secondes<10){secondes = "0"+secondes}
     time.textContent=`${hours}:${minutes}:${secondes}`
     if(hours<12){
-        message.textContent="Bonne journée ma YELLI"
+        message.textContent="Bonne journée "
     }else{
-        message.textContent="Bonne soirée ma YELLI" 
+        message.textContent="Bonne soirée" 
     }
 
     // recuperation de la date 
