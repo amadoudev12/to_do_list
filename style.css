@@ -60,7 +60,7 @@ h1 {
 
 /* Nom stylisé */
 h1::after {
-    content: "Yelli Mariame ❤";
+/*     content: "Yelli Mariame ❤"; */
     display: block;
     font-size: 18px;
     font-family: 'Pacifico', cursive;
